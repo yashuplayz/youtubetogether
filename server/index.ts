@@ -4,7 +4,14 @@ import { Server } from 'socket.io';
 import cors from 'cors';
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST']
+}));
+
+app.get('/', (req, res) => {
+  res.send('SyncTube Server is running perfectly!');
+});
 
 const server = http.createServer(app);
 const io = new Server(server, {
