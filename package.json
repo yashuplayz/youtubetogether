@@ -1,0 +1,13 @@
+{
+  "name": "synctube",
+  "version": "1.0.0",
+  "description": "YouTube together sharing app",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npx tsx index.ts",
+    "client": "cd client && npm run dev"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
